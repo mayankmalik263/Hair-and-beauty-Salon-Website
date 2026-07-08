@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold-500: #C9A227;
+  --color-gold-400: #E5C15A;
+  --color-gold-600: #A68019;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+:root {
+  --background: #09090b; /* Deep near-black */
+  --foreground: #fafafa;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+}
+
+/* Map Dark Mode Filter */
+.map-dark-filter {
+  filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%);
+  transition: filter 0.3s ease-in-out;
+}
