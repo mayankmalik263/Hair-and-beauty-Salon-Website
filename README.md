@@ -1,11 +1,11 @@
 # Hair & Beauty Unisex Salon Website
 
-A production-quality marketing and booking website for Hair & Beauty Unisex Salon, built with Next.js (App Router), Tailwind CSS, Supabase, and Framer Motion.
+A production-quality marketing and booking website for Hair & Beauty Unisex Salon, built with Next.js (App Router), Tailwind CSS, and Framer Motion.
 
 ## Features
 - **Mobile-first luxury design**: Dark and metallic gold color scheme matching the salon's brand.
 - **Dynamic Services & Packages**: Comprehensive list of services with real pricing.
-- **Booking Flow with Graceful Fallback**: Integrates with Supabase to store bookings. If Supabase is not configured, it gracefully falls back to sending a pre-filled WhatsApp message.
+- **WhatsApp Booking Flow**: Users can build their appointment and send a clean, itemised WhatsApp message to the salon. No complex backend required.
 - **Performance Optimized**: Built using Next.js App router and Tailwind CSS v4.
 
 ## Setup Instructions
@@ -15,40 +15,22 @@ A production-quality marketing and booking website for Hair & Beauty Unisex Salo
    npm install
    ```
 
-2. **Supabase Environment Variables (Optional)**
-   Create a `.env.local` file in the root directory and add your Supabase credentials:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-   ```
-   *Note: If you omit these keys, the booking form will automatically fallback to WhatsApp redirection.*
-
-3. **Run the Development Server**
+2. **Run the Development Server**
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Supabase Schema
-
-If you are using Supabase, run the following SQL command in the Supabase SQL editor to create the necessary table:
-
-```sql
-create table bookings (
-  id uuid primary key default gen_random_uuid(),
-  name text not null,
-  phone text not null,
-  service text not null,
-  booking_date date not null,
-  time_slot text not null,
-  status text default 'pending',
-  created_at timestamptz default now()
-);
-```
+## How to Update Prices
+All services and pricing are centralized in a single data file. 
+To update prices:
+1. Open `src/data/services.ts`.
+2. Locate the service you want to update.
+3. Change the `price` field. For services that require consultation, set `price: null, consultation: true`.
+4. Ask the salon owner to fill out `service-price-list-INTAKE.md` (if available) to gather the real numbers.
 
 ## Deployment to Vercel
 
 1. Push your code to a GitHub repository.
 2. Import the project into [Vercel](https://vercel.com/new).
-3. Under Environment Variables, add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-4. Click Deploy. Vercel will automatically build and host your Next.js application.
+3. Click Deploy. Vercel will automatically build and host your Next.js application.
