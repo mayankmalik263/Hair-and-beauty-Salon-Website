@@ -78,22 +78,22 @@ export default function ServicesPage() {
                   {category.category}
                 </h2>
                 
-                <div className="flex flex-col space-y-6">
+                <div className="flex flex-col space-y-4">
                   {category.items.map((item, j) => (
-                    <div key={j} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-white/5 p-6 hover:bg-zinc-900/50 transition-colors">
+                    <div key={j} className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-white/5 bg-zinc-950/50 p-6 transition-all duration-300 hover:border-gold-500/30 hover:bg-black hover:shadow-[0_0_15px_rgba(201,162,39,0.05)]">
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h3 className="text-xl font-bold text-zinc-200">{item.name}</h3>
-                          <div className="h-[1px] flex-1 bg-gradient-to-r from-zinc-800 to-transparent ml-4 hidden sm:block" />
+                          <h3 className="text-xl font-bold text-zinc-200 transition-colors group-hover:text-gold-400">{item.name}</h3>
+                          <div className="h-[1px] flex-1 bg-gradient-to-r from-zinc-800 to-transparent ml-4 hidden sm:block opacity-50 transition-opacity group-hover:opacity-100" />
                         </div>
                         <p className="mt-2 text-sm text-zinc-400 max-w-xl">{item.description}</p>
                       </div>
                       
                       <div className="flex flex-col sm:items-end gap-3 mt-4 sm:mt-0">
-                        <span className="text-xl font-bold text-gold-400">{item.price}</span>
+                        <span className="text-xl font-bold text-gold-500">{item.price}</span>
                         <Link 
                           href={`/book?service=${encodeURIComponent(item.name)}`}
-                          className={buttonVariants({ variant: "outline", size: "sm" })}
+                          className={buttonVariants({ variant: "outline", size: "sm", className: "w-fit" })}
                         >
                           Book Now <ChevronRight className="ml-1 w-4 h-4" />
                         </Link>

@@ -38,6 +38,7 @@ function BookingForm({ services }: { services: Service[] }) {
   });
   
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Pre-select logic
   useEffect(() => {
@@ -91,6 +92,7 @@ function BookingForm({ services }: { services: Service[] }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setIsSubmitting(true);
 
     if (selectedServices.size === 0) {
       setError("Please select at least one service.");
@@ -152,10 +154,14 @@ function BookingForm({ services }: { services: Service[] }) {
     const url = `https://wa.me/918222830906?text=${encodeURIComponent(text)}`;
     
     window.open(url, "_blank");
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 md:px-6 mt-8">
       {/* Left Column: Service Selection */}
       <div className="flex-1 space-y-10">
         <div className="text-center md:text-left mb-6">
@@ -291,13 +297,18 @@ function BookingForm({ services }: { services: Service[] }) {
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-8 py-2.5 text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 appearance-none"
+                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-10 py-2.5 text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 appearance-none"
                     >
-                      <option value="" disabled>Select</option>
+                      <option value="" disabled>Select time...</option>
                       {timeSlots.map((slot) => (
                         <option key={slot} value={slot}>{slot}</option>
                       ))}
                     </select>
+                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <svg className="h-4 w-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -324,9 +335,14 @@ function BookingForm({ services }: { services: Service[] }) {
               onClick={handleSubmit}
               variant="primary" 
               size="lg" 
-              className="w-full text-base"
+              className="w-full text-base relative"
+              disabled={isSubmitting || selectedServices.size === 0 || !formData.name || !formData.phone}
             >
-              Book on WhatsApp
+              {isSubmitting ? (
+                <div className="h-5 w-5 animate-spin rounded-full border-2 border-black border-t-transparent absolute" />
+              ) : (
+                "Book via WhatsApp"
+              )}
             </Button>
             <div className="mt-4 space-y-2 text-center text-xs text-zinc-500">
               <p className="flex items-center justify-center gap-1.5">

@@ -83,7 +83,7 @@ export default function GalleryPage() {
             {galleryImages.map((img, i) => (
               <button 
                 key={i} 
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 text-left"
+                className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 text-left transition-colors hover:border-gold-500/50"
                 onClick={() => setSelectedImage(img.src)}
               >
                 <Image
@@ -119,7 +119,7 @@ export default function GalleryPage() {
             {stockPlaceholders.map((img, i) => (
               <button 
                 key={i} 
-                className="group relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 text-left"
+                className="group relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 text-left transition-colors hover:border-gold-500/50"
                 onClick={() => setSelectedImage(img.src)}
               >
                 <Image

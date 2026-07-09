@@ -51,9 +51,10 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30 z-10" />
-          {/* {/* TODO: swap for real salon photo */}
-          <div className="h-full w-full bg-zinc-900 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-black/40 z-10" /> {/* Extra contrast layer */}
+          {/* TODO: swap for real salon photo */}
+          <div className="h-full w-full bg-zinc-900 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat opacity-60 mix-blend-luminosity" />
         </div>
         
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
@@ -141,8 +142,8 @@ export default async function Home() {
             </div>
 
             {/* Treatment 2 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-gold-500/30 bg-black p-8 transition-colors hover:border-gold-500/50">
-              <div className="absolute top-0 right-0 bg-gradient-to-bl from-gold-500 to-gold-600 px-4 py-1.5 text-[0.65rem] uppercase tracking-wider font-bold text-black rounded-bl-xl shadow-lg">POPULAR</div>
+            <div className="group relative overflow-hidden rounded-2xl border-2 border-gold-500/60 bg-black p-8 shadow-[0_0_25px_rgba(201,162,39,0.15)] transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_40px_rgba(201,162,39,0.3)] md:-translate-y-2 z-10">
+              <div className="absolute top-0 right-0 bg-gradient-to-bl from-gold-500 to-gold-600 px-5 py-2 text-[0.65rem] uppercase tracking-widest font-bold text-black rounded-bl-xl shadow-lg">POPULAR</div>
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/10 text-gold-500">
                 <Droplet className="h-6 w-6" />
               </div>
