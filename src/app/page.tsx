@@ -182,7 +182,7 @@ export default async function Home() {
       </Section>
 
       {/* Ladies Combos */}
-      <Section className="bg-black">
+      <Section id="ladies-exclusive-combos" className="bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-12 text-center">
             <h2 className="font-serif text-3xl font-bold md:text-4xl">Ladies Exclusive Combos</h2>
@@ -217,7 +217,7 @@ export default async function Home() {
       </Section>
 
       {/* Pre-Bridal */}
-      <Section className="bg-zinc-950">
+      <Section id="pre-bridal-packages" className="bg-zinc-950">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-12 text-center">
             <h2 className="font-serif text-3xl font-bold md:text-4xl">Pre-Bridal Packages</h2>
@@ -278,13 +278,12 @@ export default async function Home() {
               <h2 className="mb-4 font-serif text-3xl font-bold text-white">Loved your visit?</h2>
               <p className="mb-8 text-lg text-zinc-400">Your review helps us grow. Leave us a review on Google.</p>
               <a 
-                href="#" 
+                href="https://www.google.com/maps/place/HAIR+%26+BEAUTY+UNISEX+SALON/@28.8923036,76.6016097,16z/data=!4m12!1m2!2m1!1sHair+and+Beauty+Unisex+Salon+Model+Town+Rohtak!3m8!1s0x390d85940e9ef6bd:0xb987121c63a3a95a!8m2!3d28.8923036!4d76.6111369!9m1!1b1!15sCi5IYWlyIGFuZCBCZWF1dHkgVW5pc2V4IFNhbG9uIE1vZGVsIFRvd24gUm9odGFrWjAiLmhhaXIgYW5kIGJlYXV0eSB1bmlzZXggc2Fsb24gbW9kZWwgdG93biByb2h0YWuSARZoZWFsdGhfYW5kX2JlYXV0eV9zaG9wmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ0R2RVOUdaRVpPYW1nMFlsaFdXVk42VGxKUFZtUlJZMVZyTWxGc1JSQULgAQD6AQQIABBA!16s%2Fg%2F11kj75wwnc?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D"
                 className={buttonVariants({ variant: "primary", size: "lg" })}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Star className="mr-2 h-5 w-5 fill-current text-black" />
-                {/* TODO: real Google review link once the Google Business Profile is set up */}
                 Leave a Google Review
               </a>
             </div>
