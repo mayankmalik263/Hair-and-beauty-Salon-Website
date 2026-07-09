@@ -92,18 +92,31 @@ export default function ContactPage() {
             </div>
 
             {/* Map */}
-            <div className="h-[300px] md:h-[400px] lg:h-auto lg:min-h-[500px] overflow-hidden rounded-2xl border border-white/10 relative bg-zinc-900">
+            <div className="h-[300px] md:h-[400px] lg:h-auto lg:min-h-[500px] overflow-hidden rounded-2xl border border-white/10 relative bg-zinc-900 group">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold-500 border-t-transparent" />
               </div>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13962.000305891393!2d76.5898867512135!3d28.898305716912384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d85aebba71457%3A0xc3f5a2eec6d2cf9!2sModel%20Town%2C%20Rohtak%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                src="https://maps.google.com/maps?q=Hair%20and%20Beauty%20Unisex%20Salon%20Model%20Town%20Rohtak&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 className="absolute inset-0 h-full w-full border-0 map-dark-filter z-10" 
                 allowFullScreen={false} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Salon Location Map"
               />
+              {/* Clickable overlay to open exact Google Maps link */}
+              <a 
+                href="https://maps.app.goo.gl/qCMh5Um3UuravtX79"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-20 flex items-center justify-center bg-transparent transition-colors hover:bg-black/20 group"
+                aria-label="Open in Google Maps"
+              >
+                <div className="absolute bottom-6 right-6 flex items-center gap-2 rounded-xl bg-black/90 backdrop-blur-md border border-white/10 px-5 py-3 text-sm font-bold text-white shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:border-gold-500/50 group-hover:text-gold-400">
+                  <MapPin className="h-5 w-5" />
+                  Get Directions
+                </div>
+              </a>
             </div>
 
           </div>
