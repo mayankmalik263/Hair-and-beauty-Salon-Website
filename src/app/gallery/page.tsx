@@ -8,32 +8,32 @@ import { X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "/ads/WhatsApp Image 2026-07-08 at 11.26.44 PM.jpeg",
+    src: "/salon-ads/keratin-offer.jpeg",
     alt: "Keratin Treatment Offer",
     title: "Keratin Treatment",
   },
   {
-    src: "/ads/WhatsApp Image 2026-07-08 at 11.26.44 PM (2).jpeg",
-    alt: "Botox Protein Offer",
+    src: "/salon-ads/botox-before-after.jpeg",
+    alt: "Botox Protein Before After",
     title: "Botox Protein",
   },
   {
-    src: "/ads/WhatsApp Image 2026-07-08 at 11.26.45 PM.jpeg",
-    alt: "Nanoplastiya Offer",
+    src: "/salon-ads/nanoplastiya-before-after.jpeg",
+    alt: "Nanoplastiya Before After",
     title: "Nanoplastiya",
   },
   {
-    src: "/ads/1447733b-47fd-4e41-8236-53d046dbd220.jpg",
+    src: "/salon-ads/combos-offer.jpg",
     alt: "Ladies Combo Offers",
     title: "Exclusive Combos",
   },
   {
-    src: "/ads/6c7d8406-b98a-433d-9960-c4922f66cc1a.jpg",
+    src: "/salon-ads/prebridal-offer.jpg",
     alt: "Pre-Bridal Packages",
     title: "Pre-Bridal Packages",
   },
   {
-    src: "/ads/c4fcffbd-3888-4bab-baca-f7c47f06030f.jpg",
+    src: "/salon-ads/combos-offer-2.jpg",
     alt: "Special Offers",
     title: "Special Offers",
   },

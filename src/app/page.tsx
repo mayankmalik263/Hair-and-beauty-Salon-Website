@@ -7,9 +7,37 @@ import { Button, buttonVariants } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
 
+const faqData = [
+  { q: "Where are you located?", a: "Near Double Park, Model Town, Rohtak, Haryana 124001." },
+  { q: "What are your timings?", a: "We are open daily from 9:00 am to 9:00 pm." },
+  { q: "Is this a unisex salon?", a: "Yes. We offer services for men, women and kids." },
+  { q: "How do I book an appointment?", a: "Choose your services on our website and tap \"Book on WhatsApp\". Kapil confirms your appointment personally on WhatsApp." },
+  { q: "Do I have to pay in advance?", a: "No. There is no advance or booking fee. You pay only after your service." },
+  { q: "Do you offer hair colour and bridal makeup?", a: "Yes. These need a short consultation first, so the final price is confirmed on WhatsApp based on your hair and requirements." },
+  { q: "What treatments do you offer?", a: "Keratin smoothing, Botox protein treatment, Nanoplastiya repair, hair spa, facials, waxing, threading, manicure, pedicure, and bridal and pre-bridal packages." },
+  { q: "Can I message you in Hindi?", a: "Yes, message however you are comfortable. Kapil replies personally." },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -21,7 +49,8 @@ export default function Home() {
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold-400 mb-6">
@@ -46,6 +75,14 @@ export default function Home() {
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp Us
               </a>
+            </div>
+            <div className="mt-8 flex flex-col items-center justify-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/20 bg-black/50 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-gold-400">
+                <CheckCircle2 className="h-4 w-4" /> No advance payment. Pay only after your service.
+              </span>
+              <p className="text-sm text-zinc-400 mt-2">
+                Pick your services and book in 30 seconds.
+              </p>
             </div>
           </motion.div>
         </div>
@@ -227,33 +264,39 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Testimonials */}
+      {/* Reviews CTA */}
       <Section className="bg-black">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-12 text-center">
-            <h2 className="font-serif text-3xl font-bold md:text-4xl">Client Experiences</h2>
-            <p className="mt-4 text-zinc-400">See what our wonderful clients have to say about us.</p>
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="rounded-2xl border border-white/10 bg-zinc-950 p-8 sm:p-12">
+              <h2 className="mb-4 font-serif text-3xl font-bold text-white">Loved your visit?</h2>
+              <p className="mb-8 text-lg text-zinc-400">Your review helps us grow. Leave us a review on Google.</p>
+              <a 
+                href="#" 
+                className={buttonVariants({ variant: "primary", size: "lg" })}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Star className="mr-2 h-5 w-5 fill-current text-black" />
+                {/* TODO: real Google review link once the Google Business Profile is set up */}
+                Leave a Google Review
+              </a>
+            </div>
           </div>
-          
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* {/* TODO: real Google reviews needed */}
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="rounded-2xl border border-white/10 bg-zinc-950 p-8">
-                <div className="mb-4 flex gap-1 text-gold-500">
-                  {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="h-4 w-4 fill-current" />)}
-                </div>
-                <p className="text-sm italic text-zinc-300">
-                  "Absolutely amazing experience! The staff is very professional, and the ambiance is pure luxury. I loved my keratin treatment. Highly recommended!"
-                </p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-800 text-sm font-bold text-gold-400">
-                    C{i+1}
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Happy Client</p>
-                    <p className="text-xs text-zinc-500">Local Guide</p>
-                  </div>
-                </div>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section className="bg-zinc-950 border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <h2 className="font-serif text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
+          </div>
+          <div className="mx-auto max-w-3xl space-y-6">
+            {faqData.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-white/10 bg-black p-6">
+                <h3 className="font-bold text-gold-400 mb-2">{faq.q}</h3>
+                <p className="text-zinc-300 text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
