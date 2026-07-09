@@ -1,11 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, MapPin, Phone, Star, Sparkles, MessageCircle, Scissors, Droplet, Wand2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Phone, Star, Sparkles, MessageCircle, Scissors, Droplet, Wand2, Clock, CalendarDays } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
-import { motion } from "framer-motion";
+import { AnimatedHeroContent } from "@/components/ui/AnimatedHeroContent";
+import { createClient } from "@/lib/supabase/server";
+
+export const revalidate = 60;
 
 const faqData = [
   { q: "Where are you located?", a: "Near Double Park, Model Town, Rohtak, Haryana 124001." },
@@ -31,7 +32,16 @@ const faqJsonLd = {
   }))
 };
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient();
+  const { data: offersData } = await supabase
+    .from("offers")
+    .select("description")
+    .eq("active", true)
+    .order("sort_order", { ascending: true });
+
+  const offersString = offersData?.map(o => o.description).join(" • ") || "Premium tea/coffee on arrival";
+
   return (
     <div className="flex flex-col">
       <script
@@ -47,12 +57,7 @@ export default function Home() {
         </div>
         
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <AnimatedHeroContent>
             <span className="inline-block rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold-400 mb-6">
               Premium Unisex Salon
             </span>
@@ -84,7 +89,7 @@ export default function Home() {
                 Pick your services and book in 30 seconds.
               </p>
             </div>
-          </motion.div>
+          </AnimatedHeroContent>
         </div>
       </section>
 
@@ -105,7 +110,7 @@ export default function Home() {
       <section className="bg-gold-500 py-12 text-black">
         <div className="container mx-auto px-4 text-center md:px-6">
           <h2 className="font-serif text-3xl font-bold tracking-tight mb-4">Limited Time Special Offers!</h2>
-          <p className="text-lg font-medium mb-6">Free eyebrows + upper lip for first 20 ladies • Free hand & shoulder massage • Premium tea/coffee on arrival</p>
+          <p className="text-lg font-medium mb-6">{offersString}</p>
           <Link href="/book" className="inline-flex items-center justify-center rounded-md bg-black px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-800">
             Claim Your Offer
           </Link>
