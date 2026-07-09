@@ -10,6 +10,20 @@ A production-quality marketing and booking website for Hair & Beauty Unisex Salo
 
 ## Setup Instructions
 
+### 1. Supabase Setup (Database & Admin)
+This project uses Supabase for the owner's admin panel and storing services and offers.
+1. Create a free project at [supabase.com](https://supabase.com).
+2. Go to **Project Settings -> API** and copy your `Project URL` and `anon` `public` key.
+3. In this repository, create a `.env.local` file and add them:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_project_url_here
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
+   ```
+4. In your Supabase dashboard, go to the **SQL Editor**, paste the contents of `supabase_migration.sql` from this repository, and click **Run**. This will create the `services` and `offers` tables, enable Row Level Security, and insert seed data.
+5. In your Supabase dashboard, go to **Authentication -> Users** and click **Add User**. Enter the salon owner's email and a secure password. This is their login for the `/admin` dashboard.
+
+### 2. Local Development
+
 1. **Install Dependencies**
    ```bash
    npm install
@@ -21,13 +35,16 @@ A production-quality marketing and booking website for Hair & Beauty Unisex Salo
    ```
    Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## How to Update Prices
-All services and pricing are centralized in a single data file. 
-To update prices:
-1. Open `src/data/services.ts`.
-2. Locate the service you want to update.
-3. Change the `price` field. For services that require consultation, set `price: null, consultation: true`.
-4. Ask the salon owner to fill out `service-price-list-INTAKE.md` (if available) to gather the real numbers.
+## Admin Dashboard & Updating Prices
+All services, prices, and special offers are managed dynamically through the Owner Dashboard.
+
+1. Navigate to `/admin` on the live site (or `http://localhost:3000/admin` locally).
+2. Log in using the email and password created in Supabase Authentication.
+3. From the dashboard, you can:
+   - **Add/Edit/Delete Services**: Update prices, mark services as "Priced on consultation", or hide them temporarily.
+   - **Manage Offers**: Add new promotional lines to the homepage banner.
+   
+Changes saved in the dashboard will automatically appear on the live website within 60 seconds.
 
 ## Deployment to Vercel
 

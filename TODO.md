@@ -3,7 +3,7 @@
 The following placeholders are currently used on the site and must be replaced with real assets before the site goes live.
 
 ## 1. Real Per-Service Prices
-- **Action Required**: Have Kapil fill out `service-price-list-INTAKE.md` with the full price list. Update `src/data/services.ts` to reflect real prices for haircuts, spas, and facials (currently marked as "Price on request").
+- **Action Required**: Have Kapil log into the `/admin` dashboard and enter the real prices for all services (currently many are set to "Price on request").
 
 ## 2. Real Google Review Link
 - **Action Required**: Ensure the Google Business Profile is claimed and optimized. Add the real Google Review link to the "Loved your visit?" placeholder in `src/app/page.tsx`.
