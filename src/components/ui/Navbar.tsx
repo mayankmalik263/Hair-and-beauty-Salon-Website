@@ -133,6 +133,7 @@ export function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       aria-current={isActive ? "page" : undefined}
                       className={`flex items-center min-h-[56px] px-4 text-lg font-medium rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-gold-500 ${
                         isActive ? "bg-gold-500/10 text-gold-400 font-semibold" : "text-zinc-300 hover:bg-white/5 hover:text-white"
@@ -147,6 +148,7 @@ export function Navbar() {
               <div className="mt-auto flex flex-col gap-4">
                 <a
                   href="tel:8222830906"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className={buttonVariants({ variant: "outline", size: "lg", className: "w-full text-lg justify-center" })}
                 >
                   <Phone className="mr-2 h-5 w-5" />
@@ -154,6 +156,7 @@ export function Navbar() {
                 </a>
                 <Link 
                   href="/book" 
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className={buttonVariants({ variant: "primary", size: "lg", className: "w-full text-lg justify-center" })}
                 >
                   Book Appointment

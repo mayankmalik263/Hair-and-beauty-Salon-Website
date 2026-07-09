@@ -92,7 +92,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map */}
-            <div className="h-[400px] lg:h-auto min-h-[500px] overflow-hidden rounded-2xl border border-white/10 relative bg-zinc-900">
+            <div className="h-[300px] md:h-[400px] lg:h-auto lg:min-h-[500px] overflow-hidden rounded-2xl border border-white/10 relative bg-zinc-900">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold-500 border-t-transparent" />
               </div>

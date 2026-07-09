@@ -241,7 +241,7 @@ function BookingForm({ services }: { services: Service[] }) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-4 py-2.5 text-white placeholder-zinc-600 transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
+                    className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-4 py-2.5 text-base sm:text-sm text-white placeholder-zinc-600 transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
                     placeholder="Jane Doe"
                   />
                 </div>
@@ -260,7 +260,7 @@ function BookingForm({ services }: { services: Service[] }) {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-4 py-2.5 text-white placeholder-zinc-600 transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
+                    className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-4 py-2.5 text-base sm:text-sm text-white placeholder-zinc-600 transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500"
                     placeholder="9876543210"
                   />
                 </div>
@@ -280,7 +280,7 @@ function BookingForm({ services }: { services: Service[] }) {
                       min={new Date().toISOString().split("T")[0]}
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-2 py-2.5 text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full"
+                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-2 py-2.5 text-base sm:text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full"
                       style={{ colorScheme: "dark" }}
                     />
                   </div>
@@ -297,7 +297,7 @@ function BookingForm({ services }: { services: Service[] }) {
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-10 py-2.5 text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 appearance-none"
+                      className="w-full rounded-lg border border-white/10 bg-black pl-10 pr-10 py-2.5 text-base sm:text-sm text-white transition-colors hover:border-white/20 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500 appearance-none"
                     >
                       <option value="" disabled>Select time...</option>
                       {timeSlots.map((slot) => (

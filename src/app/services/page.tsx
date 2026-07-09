@@ -93,7 +93,7 @@ export default function ServicesPage() {
                         <span className="text-xl font-bold text-gold-500">{item.price}</span>
                         <Link 
                           href={`/book?service=${encodeURIComponent(item.name)}`}
-                          className={buttonVariants({ variant: "outline", size: "sm", className: "w-fit" })}
+                          className={buttonVariants({ variant: "outline", size: "sm", className: "w-full sm:w-fit" })}
                         >
                           Book Now <ChevronRight className="ml-1 w-4 h-4" />
                         </Link>

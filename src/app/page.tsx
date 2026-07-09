@@ -62,22 +62,22 @@ export default async function Home() {
             <span className="inline-block rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gold-400 mb-6">
               Premium Unisex Salon
             </span>
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="font-serif text-5xl font-bold tracking-tight text-white leading-tight sm:text-6xl md:text-7xl lg:text-8xl">
               Style That Speaks, <br className="hidden sm:block" />
               <span className="text-gold-500">Beauty That Stays.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-300 md:text-xl">
               Premium Hair, Skin, and Beauty Services for Men, Women & Kids in Model Town, Rohtak.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/book" className={buttonVariants({ variant: "primary", size: "lg" })}>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row w-full sm:w-auto">
+              <Link href="/book" className={buttonVariants({ variant: "primary", size: "lg", className: "w-full sm:w-auto" })}>
                 Book Appointment <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <a
                 href="https://wa.me/918222830906"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ variant: "outline", size: "lg" })}
+                className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto" })}
               >
                 <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp Us
               </a>
@@ -343,7 +343,7 @@ export default async function Home() {
             </div>
           </div>
           
-          <div className="relative min-h-[400px] w-full md:min-h-full bg-zinc-900 overflow-hidden">
+          <div className="relative min-h-[300px] w-full md:min-h-[400px] bg-zinc-900 overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold-500 border-t-transparent" />
             </div>
