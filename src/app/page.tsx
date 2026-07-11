@@ -9,7 +9,7 @@ import { createClient } from "@/lib/supabase/server";
 export const revalidate = 60;
 
 const faqData = [
-  { q: "Where are you located?", a: "Near Double Park, Model Town, Rohtak, Haryana 124001." },
+  { q: "Where are you located?", a: "123 Fashion Street, Style District, New York, NY 10001." },
   { q: "What are your timings?", a: "We are open daily from 9:00 am to 9:00 pm." },
   { q: "Is this a unisex salon?", a: "Yes. We offer services for men, women and kids." },
   { q: "How do I book an appointment?", a: "Choose your services on our website and tap \"Book on WhatsApp\". Kapil confirms your appointment personally on WhatsApp." },
@@ -67,7 +67,7 @@ export default async function Home() {
               <span className="text-gold-500">Beauty That Stays.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-300 md:text-xl">
-              Premium Hair, Skin, and Beauty Services for Men, Women & Kids in Model Town, Rohtak.
+              Premium Hair, Skin, and Beauty Services for Men, Women & Kids in New York.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row w-full sm:w-auto">
               <Link href="/book" className={buttonVariants({ variant: "primary", size: "lg", className: "w-full sm:w-auto" })}>
@@ -278,7 +278,7 @@ export default async function Home() {
               <h2 className="mb-4 font-serif text-3xl font-bold text-white">Loved your visit?</h2>
               <p className="mb-8 text-lg text-zinc-400">Your review helps us grow. Leave us a review on Google.</p>
               <a 
-                href="https://www.google.com/maps/place/HAIR+%26+BEAUTY+UNISEX+SALON/@28.8923036,76.6016097,16z/data=!4m12!1m2!2m1!1sHair+and+Beauty+Unisex+Salon+Model+Town+Rohtak!3m8!1s0x390d85940e9ef6bd:0xb987121c63a3a95a!8m2!3d28.8923036!4d76.6111369!9m1!1b1!15sCi5IYWlyIGFuZCBCZWF1dHkgVW5pc2V4IFNhbG9uIE1vZGVsIFRvd24gUm9odGFrWjAiLmhhaXIgYW5kIGJlYXV0eSB1bmlzZXggc2Fsb24gbW9kZWwgdG93biByb2h0YWuSARZoZWFsdGhfYW5kX2JlYXV0eV9zaG9wmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ0R2RVOUdaRVpPYW1nMFlsaFdXVk42VGxKUFZtUlJZMVZyTWxGc1JSQULgAQD6AQQIABBA!16s%2Fg%2F11kj75wwnc?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/search/?api=1&query=Hair+Salon+New+York"
                 className={buttonVariants({ variant: "primary", size: "lg" })}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -321,7 +321,7 @@ export default async function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold">Address</h3>
-                  <p className="mt-1 text-zinc-400">Near Double Park, Model Town,<br />Rohtak, Haryana 124001<br />(H.No 190 L, Balaji Wali Gali)</p>
+                  <p className="mt-1 text-zinc-400">123 Fashion Street, Suite 100<br />Style District<br />New York, NY 10001</p>
                 </div>
               </div>
               
@@ -331,14 +331,14 @@ export default async function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold">Contact</h3>
-                  <p className="mt-1 text-zinc-400">Phone & WhatsApp: <br />8222830906</p>
+                  <p className="mt-1 text-zinc-400">Phone & WhatsApp: <br />+1 (555) 123-4567</p>
                 </div>
               </div>
             </div>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link href="/book" className={buttonVariants({ variant: "primary" })}>Book Now</Link>
-              <a href="tel:8222830906" className={buttonVariants({ variant: "outline" })}>Call Us</a>
+              <a href="tel:+15551234567" className={buttonVariants({ variant: "outline" })}>Call Us</a>
             </div>
           </div>
           
@@ -348,7 +348,7 @@ export default async function Home() {
             </div>
             {/* Embedded map pointing to the exact salon location */}
             <iframe 
-              src="https://maps.google.com/maps?q=Hair%20and%20Beauty%20Unisex%20Salon%20Model%20Town%20Rohtak&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=Hair%20Salon%20New%20York&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               className="absolute inset-0 h-full w-full border-0 map-dark-filter z-10" 
               allowFullScreen={false} 
               loading="lazy" 
@@ -357,7 +357,7 @@ export default async function Home() {
             />
             {/* Clickable overlay to open exact Google Maps link */}
             <a 
-              href="https://maps.app.goo.gl/qCMh5Um3UuravtX79"
+              href="https://www.google.com/maps/search/?api=1&query=Hair+Salon+New+York"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute inset-0 z-20 flex items-center justify-center bg-transparent transition-colors hover:bg-black/20 group"

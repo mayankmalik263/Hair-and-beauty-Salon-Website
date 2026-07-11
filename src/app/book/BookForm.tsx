@@ -121,7 +121,7 @@ function BookingForm({ services }: { services: Service[] }) {
     }
 
     const lines = [
-      "Namaste Hair & Beauty Unisex Salon! Mujhe ek appointment book karni hai.",
+      "Hello Luxe Salon! I would like to book an appointment.",
       "",
       `Naam: ${formData.name}`,
       `Phone: ${formData.phone}`,

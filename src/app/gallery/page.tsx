@@ -70,7 +70,7 @@ export default function GalleryPage() {
             Our Gallery
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-400">
-            A glimpse into the luxury experience at Hair & Beauty Unisex Salon.
+            A glimpse into the luxury experience at Luxe Salon.
           </p>
         </div>
       </section>

@@ -42,11 +42,11 @@ export function Navbar() {
           {/* Logo Lockup */}
           <Link href="/" className="flex flex-col items-center justify-center p-2 -ml-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-gold-500">
             <span className="font-serif text-2xl font-bold tracking-wider text-gold-500">
-              Hair & Beauty
+              Luxe Salon
             </span>
             <span className="mt-1 h-[1px] w-full bg-gold-400" />
             <span className="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400">
-              Unisex Salon
+              Hair Studio
             </span>
           </Link>
 

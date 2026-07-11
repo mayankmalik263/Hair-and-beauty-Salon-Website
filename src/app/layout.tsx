@@ -16,15 +16,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Hair & Beauty Unisex Salon in Model Town, Rohtak",
-  description: "Premium unisex salon near Double Park Rohtak. We specialize in keratin, botox, bridal salon services, hair spa, and more in Rohtak.",
-  keywords: ["Hair & Beauty Unisex Salon in Model Town", "Rohtak", "keratin", "botox", "bridal salon in Rohtak", "unisex salon near Double Park Rohtak"],
+  title: "Luxe Salon | Premium Hair & Beauty Studio",
+  description: "Premium unisex salon in New York. We specialize in keratin, botox, bridal salon services, hair spa, and more.",
+  keywords: ["Luxe Salon", "New York", "keratin", "botox", "bridal salon", "unisex salon"],
   openGraph: {
-    title: "Hair & Beauty Unisex Salon | Model Town, Rohtak",
-    description: "Premium unisex salon near Double Park Rohtak. Book your appointment for keratin, botox, and bridal services today.",
-    url: "https://hairandbeautysalon.com",
-    siteName: "Hair & Beauty Unisex Salon",
-    locale: "en_IN",
+    title: "Luxe Salon | Premium Hair & Beauty Studio",
+    description: "Premium unisex salon in New York. Book your appointment for keratin, botox, and bridal services today.",
+    url: "https://luxesalontemplate.com",
+    siteName: "Luxe Salon",
+    locale: "en_US",
     type: "website",
   },
 };
@@ -38,18 +38,18 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
-  "name": "Hair & Beauty Unisex Salon",
-  "image": "https://hairandbeautysalon.com/salon-ads/keratin-offer.jpeg",
+  "name": "Luxe Salon",
+  "image": "https://luxesalontemplate.com/salon-ads/keratin-offer.jpeg",
   "@id": "",
-  "url": "https://hairandbeautysalon.com",
-  "telephone": "+918222830906",
+  "url": "https://luxesalontemplate.com",
+  "telephone": "+15551234567",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Near Double Park, H.No 190 L, Balaji Wali Gali",
-    "addressLocality": "Model Town, Rohtak",
-    "addressRegion": "Haryana",
-    "postalCode": "124001",
-    "addressCountry": "IN"
+    "streetAddress": "123 Fashion Street, Suite 100",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10001",
+    "addressCountry": "US"
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",

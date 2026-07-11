@@ -43,14 +43,14 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-white mb-2">Phone & WhatsApp</h3>
                     <p className="text-zinc-400 mb-4">Available during business hours</p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <a href="tel:8222830906" className="text-xl font-semibold hover:text-gold-400 transition-colors">
-                        8222830906
+                      <a href="tel:+15551234567" className="transition-colors hover:text-gold-400">
+                        +1 (555) 123-4567
                       </a>
                       <a
-                        href="https://wa.me/918222830906"
+                        href="https://wa.me/15551234567"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={buttonVariants({ variant: "outline", size: "sm" })}
+                        className="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-green-700"
                       >
                         <MessageCircle className="mr-2 w-4 h-4" /> Message
                       </a>
@@ -66,9 +66,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Location</h3>
                     <p className="text-zinc-400 leading-relaxed max-w-sm">
-                      Near Double Park, Model Town,<br />
-                      Rohtak, Haryana 124001<br />
-                      (H.No 190 L, Balaji Wali Gali)
+                      123 Fashion Street, Suite 100<br />
+                      Style District, New York, NY 10001
                     </p>
                   </div>
                 </div>
@@ -97,7 +96,7 @@ export default function ContactPage() {
                 <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold-500 border-t-transparent" />
               </div>
               <iframe 
-                src="https://maps.google.com/maps?q=Hair%20and%20Beauty%20Unisex%20Salon%20Model%20Town%20Rohtak&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=Hair%20Salon%20New%20York&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 className="absolute inset-0 h-full w-full border-0 map-dark-filter z-10" 
                 allowFullScreen={false} 
                 loading="lazy" 
@@ -106,7 +105,7 @@ export default function ContactPage() {
               />
               {/* Clickable overlay to open exact Google Maps link */}
               <a 
-                href="https://maps.app.goo.gl/qCMh5Um3UuravtX79"
+                href="https://www.google.com/maps/search/?api=1&query=Hair+Salon+New+York"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute inset-0 z-20 flex items-center justify-center bg-transparent transition-colors hover:bg-black/20 group"

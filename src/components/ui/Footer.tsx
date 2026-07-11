@@ -9,11 +9,11 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-flex flex-col">
               <span className="font-serif text-2xl font-bold tracking-wider text-gold-500">
-                Hair & Beauty
+                Luxe Salon
               </span>
               <span className="mt-1 h-[1px] w-full bg-gold-400" />
               <span className="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-zinc-400">
-                Unisex Salon
+                Hair Studio
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-400">
@@ -53,11 +53,11 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
                 <span>
-                  Near Double Park, Model Town,
+                  123 Fashion Street, Suite 100
                   <br />
-                  Rohtak, Haryana 124001
+                  Style District
                   <br />
-                  (H.No 190 L, Balaji Wali Gali)
+                  New York, NY 10001
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -66,8 +66,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-gold-500" />
-                <a href="tel:8222830906" className="transition-colors hover:text-gold-400">
-                  8222830906
+                <a href="tel:+15551234567" className="transition-colors hover:text-gold-400">
+                  +1 (555) 123-4567
                 </a>
               </li>
             </ul>
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
         
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-zinc-500">
-          <p>&copy; {new Date().getFullYear()} Hair & Beauty Unisex Salon. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Luxe Salon Template. All rights reserved.</p>
         </div>
       </div>
     </footer>
